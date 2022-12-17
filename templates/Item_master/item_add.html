@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block htmlbody %}
+
+
+<div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h4> Add Item</h4>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-6 col-sm-7 offset-md-9">
+                  <a href="item_master"><button type="submit" class="btn btn-success">Item List</button>
+                </div>
+            </div>
+              </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                 <div class="x_content">
+									<br />
+									<form class="form-label-left input_mask">
+
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>Item Name *</label>
+										    <input type="text" class="form-control" placeholder="Item name">
+										</div>
+                                        <div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>HSN Code *</label>
+										    <input type="text" class="form-control" placeholder="HSN Code">
+										</div>
+
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>GST *</label>
+										    <input type="text" class="form-control" placeholder="GST" required pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" maxlength="15" autocomplete="off">
+										</div>
+                                        <div  class="col-md-3 col-sm-6  form-group has-feedback">
+													<label>Category *</label>
+												<select class="form-control">
+													<option>select</option>
+													<option>Option one</option>
+													<option>Option two</option>
+													<option>Option three</option>
+													<option>Option four</option>
+												</select>
+										</div>
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>Manufacture *</label>
+										    <input type="text" class="form-control" placeholder="manufacture">
+										</div>
+
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>Latest Purchase *</label>
+										    <input type="text" class="form-control" placeholder="formula name">
+										</div>
+											<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>MRP *</label>
+										    <input type="text" class="form-control" placeholder="therpeutic area">
+											</div>
+                                                <div  class="col-md-3 col-sm-6  form-group has-feedback">
+													<label>UOM *</label>
+												<select class="form-control">
+													<option>select</option>
+													<option>Option one</option>
+													<option>Option two</option>
+													<option>Option three</option>
+													<option>Option four</option>
+												</select>
+												</div>
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+											<label>Image File *</label>
+											<div class="custom-file">
+    											<input type="file" class="custom-file-input" id="customFile4">
+    											<label class="custom-file-label" for="customFile">Image File</label>
+											</div>
+											</div>
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 "></label>
+										</div>
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 "></label>
+										</div>
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 "></label>
+										</div>
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 "></label>
+										</div>
+										<div class="ln_solid"></div>
+										<div class="form-group">
+											<div class="col-md-6 col-sm-6  offset-md-5">
+												<button type="submit" class="btn btn-success">Add</button>
+											</div>
+										</div>
+
+                                 </div>
+                  </div>
+              </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+
+{% endblock %}
