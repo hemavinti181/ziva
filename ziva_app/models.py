@@ -8,6 +8,12 @@ class StoreList(models.Model):
     food_licence = models.CharField(max_length=10)
     store_location = models.CharField(max_length=10)
 
+
+class Region(models.Model):
+    code = models.CharField(max_length=50)
+    name = models.CharField(max_length=10)
+
+
 class Store(models.Model):
     Store_name=models.CharField(max_length=50, blank = True, null = True)
     store_file = models.ImageField(null=True, default=None, blank=True)
@@ -28,3 +34,6 @@ class Store(models.Model):
     contact_person = models.CharField(max_length=50, blank = True, null = True)
     mobile = models.ImageField(max_length=10)
     remarks = models.CharField(max_length=50, blank = True, null = True)
+    #region = models.CharField(max_length=50)
+    region =  models.ForeignKey(Region, null=True, blank=True, on_delete=models.SET_NULL, related_name='regions')
+
