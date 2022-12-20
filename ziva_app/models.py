@@ -13,6 +13,26 @@ class Region(models.Model):
     code = models.CharField(max_length=50)
     name = models.CharField(max_length=10)
 
+class UOM(models.Model):
+    code = models.CharField(max_length=50)
+    name = models.CharField(max_length=10)
+
+class Category(models.Model):
+    code = models.CharField(max_length=50)
+    name = models.CharField(max_length=10)
+
+class Warehouse(models.Model):
+    code = models.CharField(max_length=50)
+    name = models.CharField(max_length=10)
+
+class Filter(models.Model):
+    des = models.CharField(max_length=50)
+    roles = models.CharField(max_length=10)
+    category = models.CharField(max_length=10)
+    states = models.CharField(max_length=10)
+    levels = models.CharField(max_length=10)
+    city= models.CharField(max_length=10)
+    GST = models.CharField(max_length=10)
 
 class Store(models.Model):
     Store_name=models.CharField(max_length=50, blank = True, null = True)

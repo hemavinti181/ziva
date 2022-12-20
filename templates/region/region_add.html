@@ -30,7 +30,7 @@
                   </div>
                  <div class="x_content">
 									<br />
-									<form class="form-label-left input_mask" method="POST" action="add_store"   enctype="multipart/form-data">
+									<form class="form-label-left input_mask" method="POST" action="region_add"   enctype="multipart/form-data">
 											{% csrf_token %}
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Region Name *</label>
@@ -39,8 +39,8 @@
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Choose Region File  *</label>
 											<div class="custom-file">
-    											<input type="file" class="custom-file-input" name='regionfile' id="customFile4">
-    											<label class="custom-file-label" for="customFile4">choose file</label>
+    											<input type="file" class="custom-file-input" name='regionfile' id="customFile5">
+    											<label class="custom-file-label" for="customFile5">choose file</label>
 											</div>
 										</div>
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
@@ -76,12 +76,19 @@
 													<label>WareHouse *</label>
 												<select class="form-control" name="warehouse">
 
-														<option>select</option>
+															{% for data1 in data %}
+                            		<option value="{{ data1.code }}" selected>{{ data1.name }}</option>
+                        {% endfor %}
 												</select>
 										</div>
+
+
                                         <div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Address *</label>
-										    <input type="text" class="form-control" name="storeaddress"placeholder="store address">
+										    <input type="text" class="form-control" name="address"placeholder="store address">
+										</div>
+										<div class="col-md-3 col-sm-3  form-group has-feedback">
+										    <input type="hidden" class="form-control" name="wa_id">
 											</div>
                                         <div class="form-group row">
 											<label class="col-form-label col-md-3 col-sm-3 "></label>

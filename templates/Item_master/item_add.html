@@ -30,58 +30,55 @@
                   </div>
                  <div class="x_content">
 									<br />
-									<form class="form-label-left input_mask">
+									<form class="form-label-left input_mask"  method="POST" action="item_add"   enctype="multipart/form-data">
+										{% csrf_token %}
 
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Item Name *</label>
-										    <input type="text" class="form-control" placeholder="Item name">
+										    <input type="text" class="form-control" placeholder="Item name" name="name">
 										</div>
                                         <div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>HSN Code *</label>
-										    <input type="text" class="form-control" placeholder="HSN Code">
+										    <input type="text" class="form-control" placeholder="HSN Code" name="hsncode">
 										</div>
 
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>GST *</label>
-										    <input type="text" class="form-control" placeholder="GST" required pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" maxlength="15" autocomplete="off">
+										    <input type="text" class="form-control" placeholder="GST" name="gst">
 										</div>
                                         <div  class="col-md-3 col-sm-6  form-group has-feedback">
 													<label>Category *</label>
-												<select class="form-control">
-													<option>select</option>
-													<option>Option one</option>
-													<option>Option two</option>
-													<option>Option three</option>
-													<option>Option four</option>
+												<select class="form-control" name="category">
+													{% for data in cat_data %}
+													<option value="{{ data.code }}" selected>{{ data.name }}</option>
+                       								 {% endfor %}
 												</select>
 										</div>
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Manufacture *</label>
-										    <input type="text" class="form-control" placeholder="manufacture">
+										    <input type="text" class="form-control" placeholder="manufacture" name="manufacture">
 										</div>
 
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Latest Purchase *</label>
-										    <input type="text" class="form-control" placeholder="Latest Purchase">
+										    <input type="text" class="form-control" placeholder="Latest Purchase" name="latestpurchase">
 										</div>
 											<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>MRP *</label>
-										    <input type="text" class="form-control" placeholder="MRP">
+										    <input type="text" class="form-control" placeholder="MRP" name="mrp">
 											</div>
                                                 <div  class="col-md-3 col-sm-6  form-group has-feedback">
 													<label>UOM *</label>
-												<select class="form-control">
-													<option>select</option>
-													<option>Option one</option>
-													<option>Option two</option>
-													<option>Option three</option>
-													<option>Option four</option>
+												<select class="form-control" name="uom">
+													{% for data in uom_data %}
+													<option value="{{ data.code }}" selected>{{ data.name }}</option>
+                       								 {% endfor %}
 												</select>
 												</div>
 										<div class="col-md-3 col-sm-3  form-group has-feedback">
 											<label>Image File *</label>
 											<div class="custom-file">
-    											<input type="file" class="custom-file-input" id="customFile4">
+    											<input type="file" class="custom-file-input" id="customFile4" name="imagefile">
     											<label class="custom-file-label" for="customFile">Image File</label>
 											</div>
 											</div>
